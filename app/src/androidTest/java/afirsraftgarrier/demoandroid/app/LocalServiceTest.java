@@ -21,6 +21,7 @@ import android.os.IBinder;
 import android.test.ServiceTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
+import afirsraftgarrier.demoandroid.androidapi.app.LocalService;
 
 /**
  * This is a simple framework for a test of a Service.  See {@link ServiceTestCase

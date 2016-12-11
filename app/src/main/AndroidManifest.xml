@@ -3848,9 +3848,9 @@
         </activity>
     </application>
 
-    <instrumentation
+    <!--<instrumentation
         android:name=".androidapi.app.LocalSampleInstrumentation"
         android:label="Local Sample"
-        android:targetPackage="afirsraftgarrier.demoandroid" />
+        android:targetPackage="afirsraftgarrier.demoandroid" />-->
 
 </manifest>
