@@ -17,6 +17,9 @@
 package afirsraftgarrier.demoandroid;
 
 import android.app.Application;
+import android.content.BroadcastReceiver;
+import android.content.ContentProvider;
+import android.content.Intent;
 
 public class ACCDemoAndroidApplication extends Application {
     @Override
