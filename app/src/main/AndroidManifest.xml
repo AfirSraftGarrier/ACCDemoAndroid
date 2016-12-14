@@ -3876,6 +3876,16 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".thirdparty.pay.PayActivity"
+            android:label="thirdparty/pay/AliAndWXPay"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
     <!--<instrumentation
