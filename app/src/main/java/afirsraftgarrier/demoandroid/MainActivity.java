@@ -19,20 +19,22 @@ import java.util.Map;
 
 public class MainActivity extends ListActivity {
     private static final String ANDROIDAPINAME = "androidapi";
+    private static final String TITLE = "title";
+    private static final String APATH = "afirsraftgarrier.demoandroid.Path";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        String path = intent.getStringExtra("afirsraftgarrier.demoandroid.Path");
+        String path = intent.getStringExtra(APATH);
 
         if (path == null) {
             path = "";
         }
 
         setListAdapter(new SimpleAdapter(this, getData(path),
-                android.R.layout.simple_list_item_1, new String[]{"title"},
+                android.R.layout.simple_list_item_1, new String[]{TITLE},
                 new int[]{android.R.id.text1}));
         getListView().setTextFilterEnabled(true);
     }
@@ -114,7 +116,7 @@ public class MainActivity extends ListActivity {
                 private final Collator collator = Collator.getInstance();
 
                 public int compare(Map<String, Object> map1, Map<String, Object> map2) {
-                    return collator.compare(map1.get("title"), map2.get("title"));
+                    return collator.compare(map1.get(TITLE), map2.get(TITLE));
                 }
             };
 
@@ -127,13 +129,13 @@ public class MainActivity extends ListActivity {
     protected Intent browseIntent(String path) {
         Intent result = new Intent();
         result.setClass(this, MainActivity.class);
-        result.putExtra("afirsraftgarrier.demoandroid.Path", path);
+        result.putExtra(APATH, path);
         return result;
     }
 
     protected void addItem(List<Map<String, Object>> data, String name, Intent intent) {
         Map<String, Object> temp = new HashMap<String, Object>();
-        temp.put("title", name);
+        temp.put(TITLE, name);
         temp.put("intent", intent);
         data.add(temp);
     }
@@ -142,7 +144,6 @@ public class MainActivity extends ListActivity {
     @SuppressWarnings("unchecked")
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Map<String, Object> map = (Map<String, Object>) l.getItemAtPosition(position);
-
         Intent intent = (Intent) map.get("intent");
         startActivity(intent);
     }
